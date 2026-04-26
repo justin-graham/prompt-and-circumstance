@@ -1,0 +1,132 @@
+{
+  "msa_count": 393,
+  "county_count": 3144,
+  "msa_gap_physical_exposure_correlation": 0.772309,
+  "reported_detail_only": {
+    "msa_count": 393,
+    "correlation": 0.79506,
+    "definition": "MSA coverage gap recomputed from reported detailed OEWS occupation rows only; suppressed and unmatched rows are excluded from numerator and denominator."
+  },
+  "highest_gap_msas": [
+    {
+      "cbsa": "21140",
+      "msa_name": "Elkhart-Goshen, IN",
+      "total_employment": 128550,
+      "weighted_coverage_gap": 0.6208,
+      "physical_exposure_index": 0.4749,
+      "top_invisible_occupations": [
+        "51-2090",
+        "53-7062",
+        "35-3023"
+      ]
+    },
+    {
+      "cbsa": "44700",
+      "msa_name": "Stockton-Lodi, CA",
+      "total_employment": 286420,
+      "weighted_coverage_gap": 0.5512,
+      "physical_exposure_index": 0.2906,
+      "top_invisible_occupations": [
+        "53-7062",
+        "53-3032",
+        "53-7051"
+      ]
+    },
+    {
+      "cbsa": "43580",
+      "msa_name": "Sioux City, IA-NE-SD",
+      "total_employment": 75270,
+      "weighted_coverage_gap": 0.5491,
+      "physical_exposure_index": 0.3143,
+      "top_invisible_occupations": [
+        "53-3032",
+        "35-3023",
+        "53-7062"
+      ]
+    },
+    {
+      "cbsa": "25860",
+      "msa_name": "Hickory-Lenoir-Morganton, NC",
+      "total_employment": 155050,
+      "weighted_coverage_gap": 0.5437,
+      "physical_exposure_index": 0.3287,
+      "top_invisible_occupations": [
+        "53-7062",
+        "53-7065",
+        "51-2090"
+      ]
+    },
+    {
+      "cbsa": "29020",
+      "msa_name": "Kokomo, IN",
+      "total_employment": 35550,
+      "weighted_coverage_gap": 0.5431,
+      "physical_exposure_index": 0.3131,
+      "top_invisible_occupations": [
+        "35-3023",
+        "35-3031",
+        "47-2111"
+      ]
+    },
+    {
+      "cbsa": "28450",
+      "msa_name": "Kenosha, WI",
+      "total_employment": 74050,
+      "weighted_coverage_gap": 0.5406,
+      "physical_exposure_index": 0.2887,
+      "top_invisible_occupations": [
+        "53-7062",
+        "53-7051",
+        "53-7065"
+      ]
+    },
+    {
+      "cbsa": "16540",
+      "msa_name": "Chambersburg, PA",
+      "total_employment": 57940,
+      "weighted_coverage_gap": 0.5394,
+      "physical_exposure_index": 0.3009,
+      "top_invisible_occupations": [
+        "53-7062",
+        "53-7065",
+        "53-3032"
+      ]
+    },
+    {
+      "cbsa": "49420",
+      "msa_name": "Yakima, WA",
+      "total_employment": 98540,
+      "weighted_coverage_gap": 0.5393,
+      "physical_exposure_index": 0.269,
+      "top_invisible_occupations": [
+        "53-7064",
+        "35-3023",
+        "53-7065"
+      ]
+    },
+    {
+      "cbsa": "23580",
+      "msa_name": "Gainesville, GA",
+      "total_employment": 102560,
+      "weighted_coverage_gap": 0.5386,
+      "physical_exposure_index": 0.3212,
+      "top_invisible_occupations": [
+        "51-3022",
+        "53-7062",
+        "35-3023"
+      ]
+    },
+    {
+      "cbsa": "43100",
+      "msa_name": "Sheboygan, WI",
+      "total_employment": 60670,
+      "weighted_coverage_gap": 0.5381,
+      "physical_exposure_index": 0.3558,
+      "top_invisible_occupations": [
+        "51-2090",
+        "53-7062",
+        "51-3092"
+      ]
+    }
+  ]
+}

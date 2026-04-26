@@ -1,0 +1,226 @@
+from __future__ import annotations
+
+import json
+
+from common import PROCESSED, write_json
+
+
+PROTOTYPE = [
+    {
+        "soc_code": "51-4121",
+        "title": "Welders, Cutters, Solderers, and Brazers",
+        "full_automation_score": 0.55,
+        "augmentation_pathway_score": 0.78,
+        "geographic_concentration": ["TX", "OH", "PA"],
+        "rationale_full": "Structured welding cells already clear many threshold conditions: known fixtures, repeatable seams, and controllable work envelopes. Full automation remains lower outside factories because field welding still requires setup judgment, awkward access, surface preparation, and tolerance recovery.",
+        "rationale_aug": "Collaborative welding systems are commercially mature, including cobot arms with seam tracking, multipass support, and simpler operator setup. The near-term pathway is one welder supervising more arc time, fixture changes, inspection, and exceptions rather than replacing the trade end to end.",
+    },
+    {
+        "soc_code": "47-2111",
+        "title": "Electricians",
+        "full_automation_score": 0.28,
+        "augmentation_pathway_score": 0.55,
+        "geographic_concentration": ["TX", "CA", "FL"],
+        "rationale_full": "Electricians face heterogeneous sites, code constraints, diagnostic ambiguity, and small-part manipulation in constrained spaces. Current humanoid and mobile-manipulation demos show progress on object handling, but not reliable threshold clearance across live panels, old buildings, and inspection-critical work.",
+        "rationale_aug": "Augmentation is more plausible through layout, measurement, code lookup, thermal inspection, pull planning, and remote expert support. Robots can help with repetitive drilling or cable handling in controlled construction settings while licensed workers retain responsibility for diagnosis and signoff.",
+    },
+    {
+        "soc_code": "47-2152",
+        "title": "Plumbers, Pipefitters, and Steamfitters",
+        "full_automation_score": 0.22,
+        "augmentation_pathway_score": 0.45,
+        "geographic_concentration": ["CA", "TX", "NY"],
+        "rationale_full": "The work combines diagnosis, demolition, custom routing, leak judgment, and manipulation in wet, cramped, and visually degraded environments. Those conditions are far from the structured pick-and-place and parts-moving tasks now demonstrated by advanced humanoids.",
+        "rationale_aug": "Inspection cameras, leak detection, estimating tools, pipe layout, and remote consultation can raise productivity without clearing the full physical task threshold. Robotic help is most credible for trench, prefab, or repetitive pipe-handling work rather than household service calls.",
+    },
+    {
+        "soc_code": "49-9021",
+        "title": "Heating, Air Conditioning, and Refrigeration Mechanics and Installers",
+        "full_automation_score": 0.30,
+        "augmentation_pathway_score": 0.58,
+        "geographic_concentration": ["TX", "CA", "FL"],
+        "rationale_full": "HVAC work has repeatable subtasks, but the job is still dominated by diagnosis, installation variation, ladders, attics, rooftops, and refrigerant safety. Full autonomy would need reliable locomotion, dexterous tool use, and fault isolation across many equipment vintages.",
+        "rationale_aug": "The augmentation channel is strong: sensor-guided diagnostics, parts identification, remote expert support, predictive maintenance, and robot-assisted material movement. A technician can be made more effective before a robot can safely own the full repair workflow.",
+    },
+    {
+        "soc_code": "51-2092",
+        "title": "Team Assemblers",
+        "employment_soc_code": "51-2090",
+        "full_automation_score": 0.62,
+        "augmentation_pathway_score": 0.68,
+        "geographic_concentration": ["MI", "OH", "TX"],
+        "rationale_full": "Assembly lines provide many of the threshold conditions robots need: stable workstations, standardized parts, repeatable grasps, and engineered fixtures. The remaining barrier is variant handling, fine insertion, quality judgment, and recovery from upstream defects.",
+        "rationale_aug": "Figure 02-style automotive loading, Atlas factory part sequencing, machine vision, and cobots point to a strong partial pathway. Workers are likely to shift toward replenishment, quality checks, fixture changes, and exception handling where product mix still changes.",
+    },
+    {
+        "soc_code": "51-4041",
+        "title": "Machinists",
+        "full_automation_score": 0.58,
+        "augmentation_pathway_score": 0.72,
+        "geographic_concentration": ["CA", "OH", "MI"],
+        "rationale_full": "Machining has high automation in controlled production, but machinists also interpret drawings, choose setups, handle unusual materials, and correct process drift. Full automation is most credible for repeat parts, less so for prototype and repair work.",
+        "rationale_aug": "CAM assistance, toolpath generation, in-process inspection, cobot loading, and setup recommendation are already aligned with commercial machine-tending deployments. The realistic exposure is a smaller number of machinists supervising more spindles and handling hard setups.",
+    },
+    {
+        "soc_code": "51-2028",
+        "title": "Wire Harness and Electromechanical Assemblers",
+        "full_automation_score": 0.48,
+        "augmentation_pathway_score": 0.66,
+        "geographic_concentration": ["TX", "CA", "MI"],
+        "rationale_full": "Wire harness work stresses flexible-part manipulation, routing, insertion force, and visual inspection, which remain difficult for general robotics. Automation clears thresholds on cut, strip, crimp, and test stations, but full harness build is harder when bundles deform.",
+        "rationale_aug": "Projected work instructions, automated test, crimping tools, vision inspection, and cobot presentation of parts create a credible augmentation path. The worker remains valuable for routing, rework, and diagnosing intermittent electrical defects.",
+    },
+    {
+        "soc_code": "51-9161",
+        "title": "Computer Numerically Controlled Tool Operators",
+        "full_automation_score": 0.70,
+        "augmentation_pathway_score": 0.78,
+        "geographic_concentration": ["CA", "OH", "WI"],
+        "rationale_full": "CNC operation is among the clearer threshold-clearance cases because the machine performs the core transformation and the environment is structured. The remaining human tasks are loading, probing, tool changes, offsets, inspection, and abnormal-stop recovery.",
+        "rationale_aug": "Commercial cobot machine-tending, vision inspection, and scheduling software directly augment CNC operators. The partial pathway is strong because each operator can oversee more machines while escalating only setup and process-control exceptions.",
+    },
+    {
+        "soc_code": "49-3023",
+        "title": "Automotive Service Technicians and Mechanics",
+        "full_automation_score": 0.25,
+        "augmentation_pathway_score": 0.52,
+        "geographic_concentration": ["CA", "TX", "FL"],
+        "rationale_full": "Automotive repair has diagnostic uncertainty, dirty and occluded parts, variable corrosion, and many tool changes in confined geometry. Current factory robotics does not yet clear the threshold for open-ended repair across vehicle models and histories.",
+        "rationale_aug": "Diagnostic copilots, service-manual retrieval, parts recognition, lift positioning, and remote expert review can materially augment mechanics. Robots may help with tire, inspection, or fleet-standardized tasks before general repair automation is feasible.",
+    },
+    {
+        "soc_code": "49-3011",
+        "title": "Aircraft Mechanics and Service Technicians",
+        "full_automation_score": 0.20,
+        "augmentation_pathway_score": 0.50,
+        "geographic_concentration": ["WA", "TX", "CA"],
+        "rationale_full": "Aircraft maintenance has severe certification, documentation, safety, and access constraints. Even if robots can manipulate parts, full automation must clear a much higher reliability and accountability threshold than ordinary industrial handling.",
+        "rationale_aug": "Inspection drones, borescopes, augmented documentation, tool control, and guided troubleshooting are strong complements. The exposure is more likely to appear as better inspection coverage and less paperwork than autonomous signoff or repair.",
+    },
+    {
+        "soc_code": "35-2021",
+        "title": "Food Preparation Workers",
+        "full_automation_score": 0.52,
+        "augmentation_pathway_score": 0.62,
+        "geographic_concentration": ["CA", "TX", "FL"],
+        "rationale_full": "Food preparation includes repeatable cutting, dispensing, frying, and assembly tasks that can be engineered into robotic cells. Full automation is limited by menu variation, sanitation, deformable ingredients, peak-time recovery, and customer-driven exceptions.",
+        "rationale_aug": "Dispensing systems, automated fry stations, inventory tools, and guided prep workflows can augment workers immediately. The likely path is modular task automation around the worker rather than one general-purpose kitchen robot.",
+    },
+    {
+        "soc_code": "37-2011",
+        "title": "Janitors and Cleaners, Except Maids and Housekeeping Cleaners",
+        "full_automation_score": 0.42,
+        "augmentation_pathway_score": 0.55,
+        "geographic_concentration": ["CA", "TX", "NY"],
+        "rationale_full": "Floor cleaning robots clear a meaningful subset of the job, but janitorial work includes restrooms, clutter, stairs, trash, spills, and judgment about cleanliness. Full automation requires mobile manipulation and exception handling across unstructured buildings.",
+        "rationale_aug": "Autonomous scrubbers, route planning, supply monitoring, and inspection checklists can shift labor toward exceptions and detail work. This is a clear partial-automation case where robots take predictable surface coverage first.",
+    },
+    {
+        "soc_code": "53-7062",
+        "title": "Laborers and Freight, Stock, and Material Movers, Hand",
+        "full_automation_score": 0.68,
+        "augmentation_pathway_score": 0.72,
+        "geographic_concentration": ["CA", "TX", "IL"],
+        "rationale_full": "Warehouses are the strongest general-purpose physical exposure setting because environments can be instrumented and workflows standardized. AMRs, robotic palletizing, Stretch-style unloading, and humanoid package handling all attack core subtasks.",
+        "rationale_aug": "Augmentation is also high through pick guidance, AMR transport, lift assists, sortation, and exception dashboards. Workers can become supervisors of flow, replenishment, and edge cases while robots handle travel and repetitive lifting.",
+    },
+    {
+        "soc_code": "53-3033",
+        "title": "Package Delivery Drivers",
+        "full_automation_score": 0.40,
+        "augmentation_pathway_score": 0.60,
+        "geographic_concentration": ["CA", "TX", "FL"],
+        "rationale_full": "Driving automation and depot robotics address parts of delivery, but doorstep delivery adds parking, access control, weather, stairs, pets, signatures, and customer interaction. Full automation requires both road autonomy and robust last-meter manipulation.",
+        "rationale_aug": "Route optimization, loading sequence tools, driver assistance, teleoperation, locker networks, and robotic sorting can augment delivery work. The near-term mechanism is fewer failed stops and less manual search rather than autonomous universal delivery.",
+    },
+    {
+        "soc_code": "45-2092",
+        "title": "Farmworkers and Laborers, Crop, Nursery, and Greenhouse",
+        "full_automation_score": 0.45,
+        "augmentation_pathway_score": 0.58,
+        "geographic_concentration": ["CA", "WA", "FL"],
+        "rationale_full": "Agriculture contains many high-value automation targets, but crops vary by geometry, ripeness, occlusion, weather, and damage tolerance. Full automation clears faster in structured greenhouses and row operations than in delicate outdoor harvesting.",
+        "rationale_aug": "Machine vision scouting, precision spraying, autonomous tractors, harvest aids, and teleoperated picking support create a broad partial pathway. Workers remain important where judgment about plant condition and gentle handling drives yield.",
+    },
+    {
+        "soc_code": "47-2061",
+        "title": "Construction Laborers",
+        "full_automation_score": 0.30,
+        "augmentation_pathway_score": 0.54,
+        "geographic_concentration": ["CA", "TX", "FL"],
+        "rationale_full": "Construction labor is physically exposed but sites change daily, with debris, weather, sequencing constraints, and safety coordination. Full automation has to clear locomotion, perception, and manipulation thresholds in a less structured setting than factories.",
+        "rationale_aug": "Layout robots, demolition tools, exoskeletons, material movement, progress capture, and machine guidance can augment laborers. The likely pathway is task-specific equipment around crews rather than humanoids replacing the general labor role.",
+    },
+    {
+        "soc_code": "29-1141",
+        "title": "Registered Nurses",
+        "full_automation_score": 0.12,
+        "augmentation_pathway_score": 0.50,
+        "geographic_concentration": ["CA", "TX", "FL"],
+        "rationale_full": "Nursing combines clinical judgment, patient trust, liability, dexterous care, and rapidly changing human states. Physical task clearance alone is insufficient because the social and medical decision thresholds are high.",
+        "rationale_aug": "Documentation, monitoring, medication checks, lift assists, supply transport, and triage support create meaningful augmentation. The exposure is less about replacing bedside care and more about reducing administrative and logistics load.",
+    },
+    {
+        "soc_code": "29-1292",
+        "title": "Dental Hygienists",
+        "full_automation_score": 0.18,
+        "augmentation_pathway_score": 0.42,
+        "geographic_concentration": ["CA", "TX", "FL"],
+        "rationale_full": "Dental hygiene requires fine manipulation inside a patient mouth, real-time comfort management, and clinical judgment under liability. Current dexterous robotics demonstrations do not yet clear the safety and adaptability threshold for routine autonomous care.",
+        "rationale_aug": "Imaging, charting, periodontal measurement, patient education, and scheduling support can augment the role. Robotic assistance is more plausible for measurement and tool positioning than for independent scaling and patient management.",
+    },
+    {
+        "soc_code": "39-5012",
+        "title": "Hairdressers, Hairstylists, and Cosmetologists",
+        "full_automation_score": 0.15,
+        "augmentation_pathway_score": 0.34,
+        "geographic_concentration": ["CA", "TX", "FL"],
+        "rationale_full": "The physical task is dexterous, deformable, customer-specific, and aesthetic, with constant feedback from the client. Even strong manipulation progress does not clear the taste, trust, and liability thresholds for full automation.",
+        "rationale_aug": "Augmentation is modest but real through style simulation, scheduling, inventory, color formulation, and training feedback. The core service remains human because the production function includes social interaction and subjective preference.",
+    },
+    {
+        "soc_code": "33-9032",
+        "title": "Security Guards",
+        "full_automation_score": 0.35,
+        "augmentation_pathway_score": 0.62,
+        "geographic_concentration": ["CA", "TX", "NY"],
+        "rationale_full": "Patrol robots and cameras can cover observation, but guards also de-escalate, interpret ambiguous behavior, coordinate with authorities, and make judgment calls. Full automation is constrained by accountability and rare high-stakes exceptions.",
+        "rationale_aug": "Video analytics, patrol robots, access-control alerts, incident summarization, and remote operation can substantially augment security work. The likely model is one guard monitoring a larger footprint with machines doing routine sensing.",
+    },
+]
+
+
+def main() -> None:
+    with (PROCESSED / "coverage_by_occupation.json").open("r", encoding="utf-8") as f:
+        coverage = {item["soc_code"]: item for item in json.load(f)}
+    records = []
+    for item in PROTOTYPE:
+        employment_code = item.get("employment_soc_code", item["soc_code"])
+        employment = coverage.get(employment_code, {}).get("national_employment", 0)
+        record = {
+            "soc_code": item["soc_code"],
+            "title": item["title"],
+            "full_automation_score": item["full_automation_score"],
+            "augmentation_pathway_score": item["augmentation_pathway_score"],
+            "rationale_full": item["rationale_full"],
+            "rationale_aug": item["rationale_aug"],
+            "national_employment": employment,
+            "geographic_concentration": item["geographic_concentration"],
+        }
+        records.append(record)
+
+    write_json(PROCESSED / "occupation_explorer.json", records)
+    print("Occupation explorer")
+    print(f"  prototype occupations: {len(records)}")
+    print(
+        "  average full-automation score: "
+        f"{sum(r['full_automation_score'] for r in records) / len(records):.2f}"
+    )
+    print(
+        "  average augmentation score: "
+        f"{sum(r['augmentation_pathway_score'] for r in records) / len(records):.2f}"
+    )
+
+
+if __name__ == "__main__":
+    main()

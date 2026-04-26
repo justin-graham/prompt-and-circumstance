@@ -1,0 +1,327 @@
+{
+  "thresholds": {
+    "low": 0.02,
+    "high": 0.08,
+    "definition": "Low coverage means observed Anthropic EI occupation exposure below 0.02."
+  },
+  "employment_source": "BLS OEWS May 2024 flat time-series file, with BLS Employment Projections Table 1.2 used only for missing detail rows.",
+  "national_total_employment": 154187380,
+  "matched_detail_employment": 141463810,
+  "low_coverage_detail_employment": 62624960,
+  "allocated_unmatched_low_coverage_employment": 5482529,
+  "coverage_gap_employment": 68107489,
+  "coverage_gap_share": 0.441719,
+  "coverage_tiers": [
+    {
+      "flag": "low",
+      "employment": 62624960,
+      "share": 0.406161
+    },
+    {
+      "flag": "medium",
+      "employment": 19895960,
+      "share": 0.129038
+    },
+    {
+      "flag": "high",
+      "employment": 58942890,
+      "share": 0.382281
+    },
+    {
+      "flag": "unmatched",
+      "employment": 12723570,
+      "share": 0.08252
+    }
+  ],
+  "threshold_sensitivity": [
+    {
+      "low_threshold": 0.01,
+      "coverage_gap_employment": 64126752,
+      "coverage_gap_share": 0.415901,
+      "low_coverage_detail_employment": 58841700,
+      "allocated_unmatched_low_coverage_employment": 5285052,
+      "major_group_low_shares": {
+        "11-0000": 0.07356,
+        "13-0000": 0.033221,
+        "15-0000": 0.0,
+        "17-0000": 0.356593,
+        "19-0000": 0.195605,
+        "21-0000": 0.647363,
+        "23-0000": 0.0,
+        "25-0000": 0.134884,
+        "27-0000": 0.325055,
+        "29-0000": 0.351327,
+        "31-0000": 0.71189,
+        "33-0000": 0.738179,
+        "35-0000": 0.77284,
+        "37-0000": 0.911581,
+        "39-0000": 0.488733,
+        "41-0000": 0.024234,
+        "43-0000": 0.095979,
+        "45-0000": 0.396805,
+        "47-0000": 0.573505,
+        "49-0000": 0.71337,
+        "51-0000": 0.853122,
+        "53-0000": 0.954389
+      }
+    },
+    {
+      "low_threshold": 0.02,
+      "coverage_gap_employment": 68107488,
+      "coverage_gap_share": 0.441719,
+      "low_coverage_detail_employment": 62624960,
+      "allocated_unmatched_low_coverage_employment": 5482528,
+      "major_group_low_shares": {
+        "11-0000": 0.096392,
+        "13-0000": 0.033221,
+        "15-0000": 0.0,
+        "17-0000": 0.356593,
+        "19-0000": 0.195605,
+        "21-0000": 0.647363,
+        "23-0000": 0.0,
+        "25-0000": 0.13552,
+        "27-0000": 0.37037,
+        "29-0000": 0.378841,
+        "31-0000": 0.744894,
+        "33-0000": 0.738179,
+        "35-0000": 0.880402,
+        "37-0000": 0.911581,
+        "39-0000": 0.660831,
+        "41-0000": 0.024234,
+        "43-0000": 0.101461,
+        "45-0000": 0.396805,
+        "47-0000": 0.667684,
+        "49-0000": 0.779128,
+        "51-0000": 0.854856,
+        "53-0000": 0.954389
+      }
+    },
+    {
+      "low_threshold": 0.05,
+      "coverage_gap_employment": 79399354,
+      "coverage_gap_share": 0.514954,
+      "low_coverage_detail_employment": 72681790,
+      "allocated_unmatched_low_coverage_employment": 6717564,
+      "major_group_low_shares": {
+        "11-0000": 0.197641,
+        "13-0000": 0.058483,
+        "15-0000": 0.0,
+        "17-0000": 0.549555,
+        "19-0000": 0.435901,
+        "21-0000": 0.647363,
+        "23-0000": 0.039289,
+        "25-0000": 0.145523,
+        "27-0000": 0.391536,
+        "29-0000": 0.454641,
+        "31-0000": 0.986106,
+        "33-0000": 0.785195,
+        "35-0000": 0.880402,
+        "37-0000": 0.972207,
+        "39-0000": 0.824713,
+        "41-0000": 0.024234,
+        "43-0000": 0.140368,
+        "45-0000": 1.0,
+        "47-0000": 1.0,
+        "49-0000": 0.888376,
+        "51-0000": 0.991967,
+        "53-0000": 0.987973
+      }
+    }
+  ],
+  "major_groups": {
+    "11-0000": {
+      "title": "Management Occupations",
+      "national_employment": 10966830,
+      "matched_detail_employment": 10839880,
+      "low_coverage_share": 0.096392
+    },
+    "13-0000": {
+      "title": "Business and Financial Operations Occupations",
+      "national_employment": 10351440,
+      "matched_detail_employment": 8799300,
+      "low_coverage_share": 0.033221
+    },
+    "15-0000": {
+      "title": "Computer and Mathematical Occupations",
+      "national_employment": 5192890,
+      "matched_detail_employment": 5192870,
+      "low_coverage_share": 0.0
+    },
+    "17-0000": {
+      "title": "Architecture and Engineering Occupations",
+      "national_employment": 2567210,
+      "matched_detail_employment": 2535890,
+      "low_coverage_share": 0.356593
+    },
+    "19-0000": {
+      "title": "Life, Physical, and Social Science Occupations",
+      "national_employment": 1446770,
+      "matched_detail_employment": 1436520,
+      "low_coverage_share": 0.195605
+    },
+    "21-0000": {
+      "title": "Community and Social Service Occupations",
+      "national_employment": 2569630,
+      "matched_detail_employment": 1908420,
+      "low_coverage_share": 0.647363
+    },
+    "23-0000": {
+      "title": "Legal Occupations",
+      "national_employment": 1273410,
+      "matched_detail_employment": 1226030,
+      "low_coverage_share": 0.0
+    },
+    "25-0000": {
+      "title": "Educational Instruction and Library Occupations",
+      "national_employment": 8947710,
+      "matched_detail_employment": 6450800,
+      "low_coverage_share": 0.13552
+    },
+    "27-0000": {
+      "title": "Arts, Design, Entertainment, Sports, and Media Occupations",
+      "national_employment": 2098690,
+      "matched_detail_employment": 2011720,
+      "low_coverage_share": 0.37037
+    },
+    "29-0000": {
+      "title": "Healthcare Practitioners and Technical Occupations",
+      "national_employment": 9592690,
+      "matched_detail_employment": 9164030,
+      "low_coverage_share": 0.378841
+    },
+    "31-0000": {
+      "title": "Healthcare Support Occupations",
+      "national_employment": 7448010,
+      "matched_detail_employment": 3459860,
+      "low_coverage_share": 0.744894
+    },
+    "33-0000": {
+      "title": "Protective Service Occupations",
+      "national_employment": 3654910,
+      "matched_detail_employment": 3492010,
+      "low_coverage_share": 0.738179
+    },
+    "35-0000": {
+      "title": "Food Preparation and Serving Related Occupations",
+      "national_employment": 13613490,
+      "matched_detail_employment": 13500330,
+      "low_coverage_share": 0.880402
+    },
+    "37-0000": {
+      "title": "Building and Grounds Cleaning and Maintenance Occupations",
+      "national_employment": 4496150,
+      "matched_detail_employment": 4466210,
+      "low_coverage_share": 0.911581
+    },
+    "39-0000": {
+      "title": "Personal Care and Service Occupations",
+      "national_employment": 3159940,
+      "matched_detail_employment": 3022590,
+      "low_coverage_share": 0.660831
+    },
+    "41-0000": {
+      "title": "Sales and Related Occupations",
+      "national_employment": 13351680,
+      "matched_detail_employment": 12063270,
+      "low_coverage_share": 0.024234
+    },
+    "43-0000": {
+      "title": "Office and Administrative Support Occupations",
+      "national_employment": 18218070,
+      "matched_detail_employment": 17839840,
+      "low_coverage_share": 0.101461
+    },
+    "45-0000": {
+      "title": "Farming, Fishing, and Forestry Occupations",
+      "national_employment": 442050,
+      "matched_detail_employment": 433840,
+      "low_coverage_share": 0.396805
+    },
+    "47-0000": {
+      "title": "Construction and Extraction Occupations",
+      "national_employment": 6361720,
+      "matched_detail_employment": 6293140,
+      "low_coverage_share": 0.667684
+    },
+    "49-0000": {
+      "title": "Installation, Maintenance, and Repair Occupations",
+      "national_employment": 6045020,
+      "matched_detail_employment": 6035350,
+      "low_coverage_share": 0.779128
+    },
+    "51-0000": {
+      "title": "Production Occupations",
+      "national_employment": 8743450,
+      "matched_detail_employment": 8367140,
+      "low_coverage_share": 0.854856
+    },
+    "53-0000": {
+      "title": "Transportation and Material Moving Occupations",
+      "national_employment": 13645620,
+      "matched_detail_employment": 12924770,
+      "low_coverage_share": 0.954389
+    }
+  },
+  "top_10_invisible_occupations": [
+    {
+      "soc_code": "35-3023",
+      "title": "Fast Food and Counter Workers",
+      "national_employment": 3780930,
+      "ei_representation_score": 0.0
+    },
+    {
+      "soc_code": "53-7062",
+      "title": "Laborers and Freight, Stock, and Material Movers, Hand",
+      "national_employment": 2982530,
+      "ei_representation_score": 0.0
+    },
+    {
+      "soc_code": "53-7065",
+      "title": "Stockers and Order Fillers",
+      "national_employment": 2779530,
+      "ei_representation_score": 0.0
+    },
+    {
+      "soc_code": "35-3031",
+      "title": "Waiters and Waitresses",
+      "national_employment": 2302690,
+      "ei_representation_score": 0.0
+    },
+    {
+      "soc_code": "37-2011",
+      "title": "Janitors and Cleaners, Except Maids and Housekeeping Cleaners",
+      "national_employment": 2199900,
+      "ei_representation_score": 0.0
+    },
+    {
+      "soc_code": "53-3032",
+      "title": "Heavy and Tractor-Trailer Truck Drivers",
+      "national_employment": 2070480,
+      "ei_representation_score": 0.0
+    },
+    {
+      "soc_code": "49-9071",
+      "title": "Maintenance and Repair Workers, General",
+      "national_employment": 1531700,
+      "ei_representation_score": 0.0
+    },
+    {
+      "soc_code": "51-2090",
+      "title": "Miscellaneous Assemblers and Fabricators",
+      "national_employment": 1457800,
+      "ei_representation_score": 0.0
+    },
+    {
+      "soc_code": "35-2014",
+      "title": "Cooks, Restaurant",
+      "national_employment": 1452130,
+      "ei_representation_score": 0.0116
+    },
+    {
+      "soc_code": "31-1131",
+      "title": "Nursing Assistants",
+      "national_employment": 1388430,
+      "ei_representation_score": 0.0
+    }
+  ]
+}
