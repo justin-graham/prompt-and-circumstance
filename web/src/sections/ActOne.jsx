@@ -26,7 +26,7 @@ const tierColors = {
 
 function ActOne() {
   return (
-    <Section kicker="Act 1" title="The coverage gap is large enough to shape the measurement frame." className="py-24">
+    <Section kicker="Scale of the gap" title="The coverage gap is large enough to shape the measurement frame." className="py-24">
       <p>
         Anthropic&apos;s Economic Index measures where Claude is being used at
         work. That makes it unusually concrete: the data are not forecasts or
@@ -37,6 +37,11 @@ function ActOne() {
         work through a text interface are less likely to appear, even when AI
         could eventually affect their tasks through robotics, inspection,
         scheduling, teleoperation, or exception handling.
+      </p>
+      <p>
+        We use <em>coverage gap</em> throughout this site to mean the share of
+        U.S. employment in occupations that register only weakly, or not at
+        all, in observed Economic Index usage.
       </p>
       <FigureShell
         eyebrow="Occupation coverage"

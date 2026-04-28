@@ -10,14 +10,15 @@ const loadMsaScatterPlot = () => import('../components/MsaScatterPlot')
 function ActTwo() {
   return (
     <Section
-      kicker="Act 2"
+      kicker="Geography of the gap"
       title="The invisible workforce is geographically concentrated."
       className="py-24"
     >
       <p>
-        The missing workers are not randomly distributed across the country.
-        Metro areas with larger coverage gaps are also the places where physical
-        work is more concentrated by occupation and industry.
+        The pattern is not uniform across the country. Metro areas with larger
+        coverage gaps also tend to be the places where physical work is more
+        concentrated by occupation and industry. The two patterns travel
+        together; nothing here establishes that one produces the other.
       </p>
       <p>
         Across 393 metropolitan areas, the correlation between the MSA coverage

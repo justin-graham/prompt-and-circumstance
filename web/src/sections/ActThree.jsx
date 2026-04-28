@@ -6,7 +6,7 @@ const loadOccupationExplorer = () => import('../components/OccupationExplorer')
 
 function ActThree() {
   return (
-    <Section kicker="Act 3" title="Physical AI exposure needs a different task model." className="py-24">
+    <Section kicker="A different measurement frame" title="Physical AI exposure needs a different task model." className="py-24">
       <p>
         Knowledge-work exposure can often be treated as a continuous overlap
         between model capabilities and text-mediated tasks. Physical exposure
