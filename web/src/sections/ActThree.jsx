@@ -45,18 +45,18 @@ function ActThree() {
         </p>
         <p>
           The prototype below returns to the original measurement frame, but
-          changes the visual unit from points on a scatterplot to occupation
-          rows. It scores 20 occupations on full-automation threshold clearance
-          and augmentation pathway strength. The squares encode score bins, not
-          audited task counts; the expandable notes explain the judgment behind
-          each score.
+          changes the visual unit from abstract coordinates to workers at
+          stake. It sizes each occupation by national employment, groups it by
+          exposure pathway, then uses the detail panel to show the binding
+          threshold behind the score.
         </p>
 
         <FigureShell
           eyebrow="Prototype occupation frame"
-          title="Twenty occupations scored as paired full-automation and partial-augmentation pathways."
+          title="Tile area is employment. Color is the exposure pathway. The detail panel shows the task threshold that keeps each score from becoming an occupation-level substitution claim."
+          fullBleed
         >
-          <DeferredChart loader={loadOccupationExplorer} minHeight={720} />
+          <DeferredChart loader={loadOccupationExplorer} minHeight={920} />
         </FigureShell>
       </Section>
     </section>
