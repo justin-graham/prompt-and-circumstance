@@ -226,7 +226,7 @@ function Track({ kind, entry }) {
 
 function EvidenceRow({ occupation, index }) {
   return (
-    <details className="group border-b border-rule last:border-b-0" open={index === 0}>
+    <details className="group border-b border-rule last:border-b-0">
       <summary className="grid min-h-20 cursor-pointer list-none gap-4 py-6 marker:hidden md:grid-cols-[5rem_1fr_auto] md:items-baseline md:gap-8">
         <div className="flex items-baseline justify-between md:block">
           <span className="font-sans text-sm font-semibold tabular-nums text-accent">
