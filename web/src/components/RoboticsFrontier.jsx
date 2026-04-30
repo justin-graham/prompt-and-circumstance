@@ -13,25 +13,23 @@ function stageLabel(stage) {
 }
 
 function StagePill({ stage }) {
-  if (!stage) {
-    return (
-      <span className="font-sans text-[0.72rem] font-semibold uppercase tracking-[0.08em] text-muted">
-        No deployment
-      </span>
-    )
-  }
+  const filledStage = stage ?? 0
+  const label = stage
+    ? `Stage ${stage} of 5: ${stageLabel(stage)}`
+    : 'No deployment: zero of five stages filled'
 
   return (
     <span
-      aria-label={`Stage ${stage} of 5: ${stageLabel(stage)}`}
+      aria-label={label}
       className="inline-flex items-center gap-[3px]"
       role="img"
+      title={stage ? `Stage ${stage}: ${stageLabel(stage)}` : 'No deployment'}
     >
       {[1, 2, 3, 4, 5].map((step) => (
         <span
           key={step}
           aria-hidden="true"
-          className={`block h-[10px] w-3 ${step <= stage ? 'bg-accent' : 'border border-rule bg-paper'}`}
+          className={`block h-[10px] w-3 ${step <= filledStage ? 'bg-accent' : 'border border-rule bg-paper'}`}
         />
       ))}
     </span>
@@ -81,13 +79,11 @@ function MatrixDesktop({ occupations }) {
               <td className="px-5 py-4 font-semibold tabular-nums text-accent">
                 {formatMillions(occupation.national_employment)}
               </td>
-              <td className="min-w-44 px-5 py-4 text-muted">
-                Stage {occupation.specialized.stage} · {stageLabel(occupation.specialized.stage)}
+              <td className="min-w-36 px-5 py-4">
+                <StagePill stage={occupation.specialized.stage} />
               </td>
-              <td className="min-w-44 px-5 py-4 text-muted">
-                {occupation.humanoid.stage
-                  ? `Stage ${occupation.humanoid.stage} · ${stageLabel(occupation.humanoid.stage)}`
-                  : 'No deployment'}
+              <td className="min-w-36 px-5 py-4">
+                <StagePill stage={occupation.humanoid.stage} />
               </td>
               <td className="min-w-80 px-5 py-4 leading-5 text-muted">
                 {occupation.specialized.task_coverage}
@@ -123,15 +119,17 @@ function MatrixMobile({ occupations }) {
               <p className="font-semibold uppercase tracking-[0.1em] text-muted">
                 Specialized
               </p>
-              <p className="text-ink">Stage {occupation.specialized.stage}</p>
+              <div className="mt-1">
+                <StagePill stage={occupation.specialized.stage} />
+              </div>
             </div>
             <div>
               <p className="font-semibold uppercase tracking-[0.1em] text-muted">
                 Humanoid
               </p>
-              <p className="text-ink">
-                {occupation.humanoid.stage ? `Stage ${occupation.humanoid.stage}` : 'No deployment'}
-              </p>
+              <div className="mt-1">
+                <StagePill stage={occupation.humanoid.stage} />
+              </div>
             </div>
           </div>
           <p className="mt-2 font-sans text-xs leading-5 text-muted">
