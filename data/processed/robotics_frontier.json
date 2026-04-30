@@ -1,0 +1,227 @@
+{
+  "snapshot_date": "2026-04-29",
+  "snapshot_label": "April 2026",
+  "stage_scale": {
+    "1": "Lab demo",
+    "2": "Pilot deployment",
+    "3": "Limited commercial",
+    "4": "Broad commercial",
+    "5": "Labor displacement at scale"
+  },
+  "occupations": [
+    {
+      "soc_code": "35-3023",
+      "title": "Fast Food and Counter Workers",
+      "national_employment": 3780930,
+      "specialized": {
+        "company": "Miso Robotics",
+        "system": "Flippy fry station",
+        "stage": 3,
+        "channel": "Fixed automation",
+        "note": "Next-generation Flippy is in commercial rollout at White Castle with 2025 expansion to Jack in the Box; the unit installs overnight in existing kitchens and replaces the fry station only.",
+        "source_url": "https://www.therobotreport.com/miso-robotics-refines-flippy-fry-station-with-ai-partners/",
+        "source_label": "The Robot Report, 2025"
+      },
+      "humanoid": {
+        "company": "Physical Intelligence",
+        "system": "π0.5 foundation model",
+        "stage": 1,
+        "channel": "None visible",
+        "note": "π0 and π0.5 demos cover food-handling and kitchen-style manipulation that generalizes to unseen environments, but the work is research-stage with no paying counter-service deployment.",
+        "source_url": "https://www.physicalintelligence.company/blog/pi05",
+        "source_label": "Physical Intelligence, 2025"
+      }
+    },
+    {
+      "soc_code": "53-7062",
+      "title": "Laborers and Freight, Stock, and Material Movers, Hand",
+      "national_employment": 2982530,
+      "specialized": {
+        "company": "Pickle Robot",
+        "system": "Pickle truck unloader",
+        "stage": 3,
+        "channel": "Fixed automation",
+        "note": "UPS announced a $120M order for ~400 Pickle units to autonomously unload trailers, rolling out through 2026–2027; earlier pilots ran with Maersk and DHL.",
+        "source_url": "https://sourcingjournal.com/topics/logistics/ups-pickle-robot-120-million-investment-robotics-warehouse-automation-pick-and-place-rollout-logistics-1234794119/",
+        "source_label": "Sourcing Journal, 2025"
+      },
+      "humanoid": {
+        "company": "Agility Robotics",
+        "system": "Digit",
+        "stage": 2,
+        "channel": "Cobot / co-located",
+        "note": "Digit passed 100,000 totes moved in live commercial operation at GXO's Spanx fulfillment site by November 2025 under a multi-year robots-as-a-service agreement — the first formal humanoid commercial contract.",
+        "source_url": "https://www.agilityrobotics.com/content/digit-moves-over-100k-totes",
+        "source_label": "Agility Robotics, Nov 2025"
+      }
+    },
+    {
+      "soc_code": "53-7065",
+      "title": "Stockers and Order Fillers",
+      "national_employment": 2779530,
+      "specialized": {
+        "company": "Symbotic",
+        "system": "AI-powered robotic warehouse system",
+        "stage": 4,
+        "channel": "Fixed automation",
+        "note": "Deploying across all 42 Walmart regional distribution centers; acquired Walmart's Advanced Systems and Robotics business in 2025 with a 400-system, $5B+ multi-year backlog.",
+        "source_url": "https://www.symbotic.com/about/news-events/news/symbotic-completes-acquisition-of-walmarts-advanced-systems-and-robotics-business-and-signs-related-commercial-agreement/",
+        "source_label": "Symbotic, 2025"
+      },
+      "humanoid": {
+        "company": "Apptronik",
+        "system": "Apollo",
+        "stage": 2,
+        "channel": "Cobot / co-located",
+        "note": "Apollo is operating in designated zones at GXO Logistics warehouses and Mercedes-Benz / Jabil factories; raised $520M at a $5B valuation in February 2026 with 2026 commercial-scale targets.",
+        "source_url": "https://www.cnbc.com/2026/02/11/apptronik-raises-520-million-at-5-billion-valuation-for-apollo-robot.html",
+        "source_label": "CNBC, Feb 2026"
+      }
+    },
+    {
+      "soc_code": "35-3031",
+      "title": "Waiters and Waitresses",
+      "national_employment": 2302690,
+      "specialized": {
+        "company": "Bear Robotics",
+        "system": "Servi (Servi, Servi Mini, Servi+)",
+        "stage": 4,
+        "channel": "Autonomous vehicle",
+        "note": "LG Electronics took a 51% controlling stake in Bear Robotics in January 2025 at a reported ~$600M valuation; Servi runs across thousands of restaurants, hotels, and senior-living sites in the U.S., Korea, and Japan.",
+        "source_url": "https://techcrunch.com/2025/01/24/lg-electronics-takes-majority-stake-in-bear-robotics-reportedly-valuing-startup-at-600m/",
+        "source_label": "TechCrunch, Jan 2025"
+      },
+      "humanoid": null
+    },
+    {
+      "soc_code": "37-2011",
+      "title": "Janitors and Cleaners",
+      "national_employment": 2199900,
+      "specialized": {
+        "company": "Avidbots",
+        "system": "Neo / Neo 2 floor scrubbers",
+        "stage": 4,
+        "channel": "Autonomous vehicle",
+        "note": "Neo robots are deployed across five continents at Singapore Changi, Paris CDG, and Cincinnati airports plus DHL warehouses and major shopping malls; Tennant + Brain Corp's competing X6 ROVR is rolling out fleetwide in 2026.",
+        "source_url": "https://www.therobotreport.com/neo-2-cleaning-robot-includes-avidbots-updates-ai-fleet-management/",
+        "source_label": "The Robot Report, 2024"
+      },
+      "humanoid": {
+        "company": "1X Technologies",
+        "system": "NEO",
+        "stage": 1,
+        "channel": "Teleoperation",
+        "note": "1X is shipping early NEO units into homes in late 2025 / early 2026 with substantial teleoperator support, positioned around tidying, surface wiping, and laundry. Physical Intelligence's π0 laundry-folding demo is the strongest pure-autonomy result.",
+        "source_url": "https://www.1x.tech/neo",
+        "source_label": "1X Technologies"
+      }
+    },
+    {
+      "soc_code": "53-3032",
+      "title": "Heavy and Tractor-Trailer Truck Drivers",
+      "national_employment": 2070480,
+      "specialized": {
+        "company": "Aurora Innovation",
+        "system": "Aurora Driver",
+        "stage": 3,
+        "channel": "Autonomous vehicle",
+        "note": "Commercial driverless Class 8 service launched on the Dallas–Houston lane in May 2025 with Uber Freight and Hirschbach as paying customers; expanded to Fort Worth–El Paso in 2025 and connecting to Phoenix in early 2026, with 250,000 driverless miles logged.",
+        "source_url": "https://techcrunch.com/2025/05/01/aurora-launches-commercial-self-driving-truck-service-in-texas/",
+        "source_label": "TechCrunch, May 2025"
+      },
+      "humanoid": null
+    },
+    {
+      "soc_code": "49-9071",
+      "title": "Maintenance and Repair Workers, General",
+      "national_employment": 1531700,
+      "specialized": {
+        "company": "Boston Dynamics",
+        "system": "Spot + Orbit fleet management",
+        "stage": 4,
+        "channel": "Autonomous vehicle",
+        "note": "Nearly 2,000 Spot robots deployed across customer sites (BMW, Cargill, power generation, construction), having inspected over 130,000 industrial assets; expanded from equipment-only inspection to full-facility coverage in 2025.",
+        "source_url": "https://bostondynamics.com/blog/retrospective-on-boston-dynamics-spot-robot-uses/",
+        "source_label": "Boston Dynamics, 2025"
+      },
+      "humanoid": {
+        "company": "Boston Dynamics",
+        "system": "Atlas (electric)",
+        "stage": 1,
+        "channel": "None visible",
+        "note": "Electric Atlas demos through 2025–2026 cover whole-body manipulation, tool and parts handling at Hyundai facilities, and dynamic locomotion useful for ladder and stair access — the most credible humanoid progress on facility-style physical tasks. No general-maintenance customer yet.",
+        "source_url": "https://bostondynamics.com/blog/electric-new-era-for-atlas/",
+        "source_label": "Boston Dynamics"
+      }
+    },
+    {
+      "soc_code": "51-2090",
+      "title": "Miscellaneous Assemblers and Fabricators",
+      "national_employment": 1457800,
+      "specialized": {
+        "company": "Universal Robots (Teradyne)",
+        "system": "UR cobot family",
+        "stage": 4,
+        "channel": "Cobot / co-located",
+        "note": "Over 75,000 UR cobots deployed worldwide with roughly 40% global cobot market share; the AI-ready UR15 launched at Automate 2025 cuts assembly cycle times by up to 30%.",
+        "source_url": "https://www.robotics247.com/article/automate-2025-universal-robots-introduces-ur15-cobot",
+        "source_label": "Robotics 24/7, 2025"
+      },
+      "humanoid": {
+        "company": "Figure",
+        "system": "Figure 02 / Figure 03",
+        "stage": 2,
+        "channel": "Cobot / co-located",
+        "note": "Figure 02 completed an 11-month BMW Spartanburg pilot, loading 90,000+ sheet-metal parts into ~30,000 X3s before retiring in November 2025; Figure 03 began shipping in late 2025 with monthly volume roughly doubling toward ~240 units by April 2026.",
+        "source_url": "https://www.figure.ai/news/production-at-bmw",
+        "source_label": "Figure, 2025"
+      }
+    },
+    {
+      "soc_code": "35-2014",
+      "title": "Cooks, Restaurant",
+      "national_employment": 1452130,
+      "specialized": {
+        "company": "Sweetgreen / Wonder",
+        "system": "Infinite Kitchen automated makeline",
+        "stage": 3,
+        "channel": "Fixed automation",
+        "note": "Roughly 20 Infinite Kitchen restaurants live by late 2025; Sweetgreen plans Infinite Kitchen in 75%+ of new builds in 2026 and sold the Spyce robotics arm to Wonder for ~$186M. Chef Robotics serves a parallel B2B prepared-meals niche (40M+ meals at Amy's Kitchen, Sunbasket, Cafe Spice).",
+        "source_url": "https://restauranttechnologynews.com/2025/11/sweetgreen-sells-restaurant-robotics-arm-to-wonder-while-continuing-infinite-kitchen-expansion/",
+        "source_label": "Restaurant Technology News, Nov 2025"
+      },
+      "humanoid": {
+        "company": "Physical Intelligence",
+        "system": "π0 / π0.5",
+        "stage": 1,
+        "channel": "None visible",
+        "note": "Published demos cover meal-prep manipulation: cracking eggs, handling produce, stovetop and cookware interaction, and kitchen cleanup, with π0.5 generalizing to unseen kitchens. Sunday Robotics targets the same space with fewer published technical results.",
+        "source_url": "https://www.physicalintelligence.company/blog/pi0",
+        "source_label": "Physical Intelligence, 2024"
+      }
+    },
+    {
+      "soc_code": "31-1131",
+      "title": "Nursing Assistants",
+      "national_employment": 1388430,
+      "specialized": {
+        "company": "Diligent Robotics",
+        "system": "Moxi (Moxi 2.0 in 2026)",
+        "stage": 3,
+        "channel": "Autonomous vehicle",
+        "note": "Nearly 100 Moxi units operate across 25+ U.S. hospitals (including Medical City Dallas), completing 1.25M+ deliveries and 100,000+ autonomous elevator rides. Serve Robotics announced acquisition of Diligent in January 2026; Moxi handles logistics, not nursing tasks.",
+        "source_url": "https://www.therobotreport.com/diligent-robotics-hits-1m-picks-with-moxi-robot-in-healthcare-settings/",
+        "source_label": "The Robot Report, 2025"
+      },
+      "humanoid": {
+        "company": "1X Technologies",
+        "system": "NEO",
+        "stage": 1,
+        "channel": "Teleoperation",
+        "note": "1X has positioned NEO toward eldercare and in-home assistance — fetching, light support, companionship — and is the most visible humanoid in homes as of early 2026, though heavily teleoperated. No humanoid has a credible patient-handling clinical pilot.",
+        "source_url": "https://www.1x.tech/neo",
+        "source_label": "1X Technologies"
+      }
+    }
+  ]
+}
