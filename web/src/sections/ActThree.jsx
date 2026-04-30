@@ -44,18 +44,19 @@ function ActThree() {
           teleoperation, inspection, routing, or exception handling.
         </p>
         <p>
-          The prototype below returns to the original measurement frame. It
-          scores 20 occupations on full-automation threshold clearance and
-          augmentation pathway strength. The scores are hand-coded research
-          scaffolding, meant to be replaced by a reproducible rubric in the
-          fellowship work.
+          The prototype below returns to the original measurement frame, but
+          changes the visual unit from points on a scatterplot to occupation
+          rows. It scores 20 occupations on full-automation threshold clearance
+          and augmentation pathway strength. The squares encode score bins, not
+          audited task counts; the expandable notes explain the judgment behind
+          each score.
         </p>
 
         <FigureShell
           eyebrow="Prototype occupation frame"
-          title="Twenty occupations scored on full-automation threshold clearance and partial-augmentation pathways."
+          title="Twenty occupations scored as paired full-automation and partial-augmentation pathways."
         >
-          <DeferredChart loader={loadOccupationExplorer} minHeight={600} />
+          <DeferredChart loader={loadOccupationExplorer} minHeight={720} />
         </FigureShell>
       </Section>
     </section>
