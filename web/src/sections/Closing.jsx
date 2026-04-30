@@ -29,7 +29,7 @@ function Closing() {
         </a>
         <a
           className="text-accent underline decoration-rule underline-offset-4"
-          href="https://github.com/justin-graham/prompt-and-circumstance/issues/new"
+          href="https://www.raindroprace.com/contact"
         >
           Send feedback
         </a>

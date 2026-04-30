@@ -67,7 +67,6 @@ function MatrixDesktop({ occupations }) {
             <th className="px-5 py-3 font-semibold">Specialized stage</th>
             <th className="px-5 py-3 font-semibold">Humanoid stage</th>
             <th className="px-5 py-3 font-semibold">Task slice covered</th>
-            <th className="py-3 pl-5 font-semibold">Confidence</th>
           </tr>
         </thead>
         <tbody>
@@ -87,11 +86,6 @@ function MatrixDesktop({ occupations }) {
               </td>
               <td className="min-w-80 px-5 py-4 leading-5 text-muted">
                 {occupation.specialized.task_coverage}
-              </td>
-              <td className="py-4 pl-5">
-                <Confidence value={occupation.specialized.confidence} />
-                <span className="text-muted"> / </span>
-                <Confidence value={occupation.humanoid.confidence} />
               </td>
             </tr>
           ))}

@@ -262,16 +262,18 @@ function CountyMap() {
               <Tooltip tooltip={tooltip} />
             </div>
           </div>
-          <div className="mt-4 flex flex-wrap gap-2 font-sans text-xs text-muted">
-            {mapColors.map((color, index) => (
-              <span key={color} className="flex items-center gap-2">
+          <div className="mt-4 flex flex-wrap items-center gap-2 font-sans text-xs text-muted">
+            <span>lower gap</span>
+            <span className="flex items-center gap-1" aria-hidden="true">
+              {mapColors.map((color) => (
                 <span
+                  key={color}
                   className="h-3 w-6 border border-rule"
                   style={{ backgroundColor: color }}
                 />
-                {index === 0 ? 'lower gap' : index === mapColors.length - 1 ? 'higher gap' : ''}
-              </span>
-            ))}
+              ))}
+            </span>
+            <span>higher gap</span>
           </div>
         </div>
       </div>
