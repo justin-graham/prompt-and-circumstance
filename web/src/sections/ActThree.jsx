@@ -1,30 +1,63 @@
+import DeferredChart from '../components/DeferredChart'
+import FigureShell from '../components/FigureShell'
 import RoboticsFrontier from '../components/RoboticsFrontier'
 import Section from '../components/Section'
+
+const loadOccupationExplorer = () => import('../components/OccupationExplorer')
 
 function ActThree() {
   return (
     <section className="py-24">
       <Section
         kicker="The frontier, occupation by occupation"
-        title="The same ten jobs sit at radically different points on the actual robotics frontier."
+        title="The same ten jobs sit at different points on the actual robotics frontier."
       >
         <p>
           The Economic Index represents these workers with a single low score
-          each. The robots being built for them do not. The ten deployment
-          realities below — from Aurora&apos;s commercial driverless trucks in
-          Texas to nursing-assistant tasks no humanoid has touched — get
-          flattened into one number when the only signal is chat usage.
+          each. The physical systems being built around them do not. Some
+          occupations already have paid, narrow automation for a specific task;
+          others have only adjacent lab demonstrations or no credible humanoid
+          path at all.
         </p>
         <p>
           For each occupation, the <em>specialized</em> track is the company
-          currently doing the most paid commercial work on those tasks with a
-          purpose-built system. The <em>humanoid</em> track is the leading
-          effort to do the same work with a general-purpose human-form robot,
-          where one credibly exists. Stages reflect verifiable deployment
-          status, not roadmap claims.
+          with the strongest public evidence for a purpose-built system. The
+          <em> humanoid</em> track is the strongest public evidence for a
+          general-purpose human-form system, where one credibly exists. The
+          comparison is deliberately task-level: a robot may cover trailer
+          unloading, fry baskets, or hospital deliveries without covering the
+          occupation itself.
         </p>
       </Section>
       <RoboticsFrontier />
+      <Section
+        className="pt-24"
+        kicker="From evidence to measurement"
+        title="The deployment evidence points back to a two-dimensional task model."
+      >
+        <p>
+          The frontier rows above are not final exposure scores. They show why a
+          physical AI extension should separate two mechanisms that are often
+          collapsed in text-based measures: whether a system can clear every
+          threshold needed for full task automation, and whether partial
+          systems can still change the production function through cobots,
+          teleoperation, inspection, routing, or exception handling.
+        </p>
+        <p>
+          The prototype below returns to the original measurement frame. It
+          scores 20 occupations on full-automation threshold clearance and
+          augmentation pathway strength. The scores are hand-coded research
+          scaffolding, meant to be replaced by a reproducible rubric in the
+          fellowship work.
+        </p>
+
+        <FigureShell
+          eyebrow="Prototype occupation frame"
+          title="Twenty occupations scored on full-automation threshold clearance and partial-augmentation pathways."
+        >
+          <DeferredChart loader={loadOccupationExplorer} minHeight={600} />
+        </FigureShell>
+      </Section>
     </section>
   )
 }

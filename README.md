@@ -33,6 +33,7 @@ County values inherit MSA coverage gaps where possible and use QCEW industry str
 - BLS QCEW 2024 annual singlefile for county industry employment.
 - NBER CBSA-to-FIPS crosswalk.
 - Census 2024 Gazetteer files.
+- Public robotics deployment sources listed in `data/pipeline/05_robotics_frontier.py`, including company releases, SEC-adjacent reporting, and reputable robotics or logistics trade coverage.
 
 ## Reproduction
 
@@ -48,6 +49,7 @@ The pipeline prints the national coverage summary, MSA correlation, top invisibl
 - `data/processed/coverage_by_county.json`
 - `data/processed/coverage_by_msa.json`
 - `data/processed/occupation_explorer.json`
+- `data/processed/robotics_frontier.json`
 - `data/processed/summary_national.json`
 - `data/processed/summary_geography.json`
 

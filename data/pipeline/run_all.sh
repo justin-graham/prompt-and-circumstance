@@ -9,6 +9,7 @@ python3 data/pipeline/01_download.py
 python3 data/pipeline/02_join.py
 python3 data/pipeline/03_geography.py
 python3 data/pipeline/04_occupations.py
+python3 data/pipeline/05_robotics_frontier.py
 
 python3 - <<'PY'
 import json

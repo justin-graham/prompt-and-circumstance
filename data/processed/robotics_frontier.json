@@ -1,35 +1,69 @@
 {
-  "snapshot_date": "2026-04-29",
+  "snapshot_date": "2026-04-30",
   "snapshot_label": "April 2026",
   "stage_scale": {
     "1": "Lab demo",
-    "2": "Pilot deployment",
-    "3": "Limited commercial",
-    "4": "Broad commercial",
-    "5": "Labor displacement at scale"
+    "2": "Paid pilot",
+    "3": "Narrow commercial task",
+    "4": "Multi-site operational product",
+    "5": "Occupation-level substitution evidence"
   },
+  "schema_version": 2,
   "occupations": [
     {
       "soc_code": "35-3023",
       "title": "Fast Food and Counter Workers",
       "national_employment": 3780930,
       "specialized": {
+        "status": "observed",
         "company": "Miso Robotics",
         "system": "Flippy fry station",
         "stage": 3,
         "channel": "Fixed automation",
-        "note": "Next-generation Flippy is in commercial rollout at White Castle with 2025 expansion to Jack in the Box; the unit installs overnight in existing kitchens and replaces the fry station only.",
-        "source_url": "https://www.therobotreport.com/miso-robotics-refines-flippy-fry-station-with-ai-partners/",
-        "source_label": "The Robot Report, 2025"
+        "task_coverage": "Fry station only: baskets, timing, and repetitive fryer handling inside quick-service kitchens.",
+        "claim_supported": "Commercial kitchen deployments exist, but the claim is limited to a narrow fry-station slice rather than the full fast-food role.",
+        "source_date": "2025-01-29",
+        "source_type": "mixed",
+        "confidence": "medium",
+        "note": "Flippy is relevant because it attacks a real, injury-prone fast-food subtask. The evidence should not be read as broad counter-worker automation: the system covers frying workflow, while ordering, assembly, stocking, cleaning, and customer exceptions remain outside scope.",
+        "sources": [
+          {
+            "label": "Restaurant Dive, Jan 2025",
+            "url": "https://www.restaurantdive.com/news/miso-robotics-develops-smaller-faster-flippy-white-castle-jack-in-the-box/738567/",
+            "date": "2025-01-29",
+            "source_type": "trade reporting",
+            "supports": "Describes new Flippy version and early 2025 installations, with deployment count caveat."
+          },
+          {
+            "label": "Miso Robotics, Jan 2025",
+            "url": "https://misorobotics.com/newsroom/miso-launches-next-generation-flippy-fry-station-the-most-significant-evolution-of-the-ai-powered-robot-since-its-inception/",
+            "date": "2025-01-28",
+            "source_type": "company",
+            "supports": "Describes the next-generation fry-station system and planned installations."
+          }
+        ]
       },
       "humanoid": {
+        "status": "observed",
         "company": "Physical Intelligence",
-        "system": "π0.5 foundation model",
+        "system": "pi0.5 foundation model",
         "stage": 1,
-        "channel": "None visible",
-        "note": "π0 and π0.5 demos cover food-handling and kitchen-style manipulation that generalizes to unseen environments, but the work is research-stage with no paying counter-service deployment.",
-        "source_url": "https://www.physicalintelligence.company/blog/pi05",
-        "source_label": "Physical Intelligence, 2025"
+        "channel": "Lab research",
+        "task_coverage": "Adjacent food-handling and kitchen manipulation demos; no paid counter-service deployment.",
+        "claim_supported": "Robot foundation-model demos show relevant manipulation primitives, not occupation-targeting deployment.",
+        "source_date": "2025-04-22",
+        "source_type": "research/company",
+        "confidence": "medium",
+        "note": "The strongest humanoid-adjacent evidence is general manipulation in kitchens and homes. It is useful for the threshold-clearance argument, but it remains lab evidence rather than a commercial fast-food system.",
+        "sources": [
+          {
+            "label": "Physical Intelligence, Apr 2025",
+            "url": "https://www.physicalintelligence.company/blog/pi05",
+            "date": "2025-04-22",
+            "source_type": "research/company",
+            "supports": "Shows open-world manipulation generalization, including kitchen-style tasks."
+          }
+        ]
       }
     },
     {
@@ -37,22 +71,48 @@
       "title": "Laborers and Freight, Stock, and Material Movers, Hand",
       "national_employment": 2982530,
       "specialized": {
+        "status": "observed",
         "company": "Pickle Robot",
         "system": "Pickle truck unloader",
         "stage": 3,
         "channel": "Fixed automation",
-        "note": "UPS announced a $120M order for ~400 Pickle units to autonomously unload trailers, rolling out through 2026–2027; earlier pilots ran with Maersk and DHL.",
-        "source_url": "https://sourcingjournal.com/topics/logistics/ups-pickle-robot-120-million-investment-robotics-warehouse-automation-pick-and-place-rollout-logistics-1234794119/",
-        "source_label": "Sourcing Journal, 2025"
+        "task_coverage": "Trailer unloading: box lifting, transfer, and induction from trailers to conveyors.",
+        "claim_supported": "Reported order activity and pilots support a narrow commercial unloading task, not the full material-mover occupation.",
+        "source_date": "2025-12-19",
+        "source_type": "trade reporting",
+        "confidence": "medium",
+        "note": "Trailer unloading is one of the clearest manual material-handling slices because the task is repetitive, physically demanding, and measurable. The remaining occupation includes many other warehouse, stock, and freight-handling tasks.",
+        "sources": [
+          {
+            "label": "Sourcing Journal, Dec 2025",
+            "url": "https://sourcingjournal.com/topics/logistics/ups-pickle-robot-120-million-investment-robotics-warehouse-automation-pick-and-place-rollout-logistics-1234794119/",
+            "date": "2025-12-19",
+            "source_type": "trade reporting",
+            "supports": "Reports UPS order details and prior logistics pilots."
+          }
+        ]
       },
       "humanoid": {
+        "status": "observed",
         "company": "Agility Robotics",
         "system": "Digit",
         "stage": 2,
         "channel": "Cobot / co-located",
-        "note": "Digit passed 100,000 totes moved in live commercial operation at GXO's Spanx fulfillment site by November 2025 under a multi-year robots-as-a-service agreement — the first formal humanoid commercial contract.",
-        "source_url": "https://www.agilityrobotics.com/content/digit-moves-over-100k-totes",
-        "source_label": "Agility Robotics, Nov 2025"
+        "task_coverage": "Tote movement and handoff in live fulfillment settings.",
+        "claim_supported": "Commercial-site tote movement supports paid or customer-facing pilot evidence for logistics, but not broad material-mover substitution.",
+        "source_date": "2025-11-20",
+        "source_type": "company",
+        "confidence": "high",
+        "note": "Digit provides the strongest public humanoid evidence in the top-ten list because it has moved high volumes of totes in a live logistics operation. The task remains bounded and co-located with human workflows.",
+        "sources": [
+          {
+            "label": "Agility Robotics, Nov 2025",
+            "url": "https://www.agilityrobotics.com/content/digit-moves-over-100k-totes",
+            "date": "2025-11-20",
+            "source_type": "company",
+            "supports": "Reports more than 100,000 totes moved at GXO's Flowery Branch facility."
+          }
+        ]
       }
     },
     {
@@ -60,22 +120,62 @@
       "title": "Stockers and Order Fillers",
       "national_employment": 2779530,
       "specialized": {
+        "status": "observed",
         "company": "Symbotic",
         "system": "AI-powered robotic warehouse system",
         "stage": 4,
         "channel": "Fixed automation",
-        "note": "Deploying across all 42 Walmart regional distribution centers; acquired Walmart's Advanced Systems and Robotics business in 2025 with a 400-system, $5B+ multi-year backlog.",
-        "source_url": "https://www.symbotic.com/about/news-events/news/symbotic-completes-acquisition-of-walmarts-advanced-systems-and-robotics-business-and-signs-related-commercial-agreement/",
-        "source_label": "Symbotic, 2025"
+        "task_coverage": "Distribution-center storage, retrieval, sequencing, and case handling.",
+        "claim_supported": "Multi-site warehouse automation is well supported; occupation-level stocker/order-filler substitution is not directly estimated.",
+        "source_date": "2025-01-28",
+        "source_type": "company",
+        "confidence": "high",
+        "note": "Symbotic is strong evidence that stock-flow tasks can move from individual workers into engineered warehouse systems. The better interpretation is task reallocation inside distribution networks rather than a complete occupation replacement measure.",
+        "sources": [
+          {
+            "label": "Walmart and Symbotic, May 2022",
+            "url": "https://www.symbotic.com/case-studies/walmart/",
+            "date": "2022-05-23",
+            "source_type": "company",
+            "supports": "Announces expansion of Symbotic systems to all 42 Walmart regional distribution centers over coming years."
+          },
+          {
+            "label": "Symbotic, Jan 2025",
+            "url": "https://www.symbotic.com/about/news-events/news/symbotic-completes-acquisition-of-walmarts-advanced-systems-and-robotics-business-and-signs-related-commercial-agreement/",
+            "date": "2025-01-28",
+            "source_type": "company",
+            "supports": "Describes APD agreement, 400-system opportunity, and possible $5B-plus backlog increase."
+          }
+        ]
       },
       "humanoid": {
+        "status": "observed",
         "company": "Apptronik",
         "system": "Apollo",
         "stage": 2,
         "channel": "Cobot / co-located",
-        "note": "Apollo is operating in designated zones at GXO Logistics warehouses and Mercedes-Benz / Jabil factories; raised $520M at a $5B valuation in February 2026 with 2026 commercial-scale targets.",
-        "source_url": "https://www.cnbc.com/2026/02/11/apptronik-raises-520-million-at-5-billion-valuation-for-apollo-robot.html",
-        "source_label": "CNBC, Feb 2026"
+        "task_coverage": "Industrial and logistics partner pilots in controlled zones.",
+        "claim_supported": "Public partnerships and funding support serious pilot activity, but public task-performance evidence is thinner than for fixed warehouse automation.",
+        "source_date": "2026-02-11",
+        "source_type": "mixed",
+        "confidence": "medium",
+        "note": "Apollo is relevant because its customer set overlaps logistics and manufacturing. The evidence is still mostly partnership and financing signal, so it should sit below observed high-volume task operation.",
+        "sources": [
+          {
+            "label": "Apptronik, Feb 2026",
+            "url": "https://apptronik.com/news-collection/apptronik-closes-over-935-million-series-a",
+            "date": "2026-02-11",
+            "source_type": "company",
+            "supports": "Reports funding and partnerships with Mercedes-Benz, GXO Logistics, and Jabil."
+          },
+          {
+            "label": "TechCrunch, Feb 2026",
+            "url": "https://techcrunch.com/2026/02/11/humanoid-robot-startup-apptronik-has-now-raised-935m-at-a-5b-valuation/",
+            "date": "2026-02-11",
+            "source_type": "reporting",
+            "supports": "Reports valuation and strategic partnerships."
+          }
+        ]
       }
     },
     {
@@ -83,37 +183,87 @@
       "title": "Waiters and Waitresses",
       "national_employment": 2302690,
       "specialized": {
+        "status": "observed",
         "company": "Bear Robotics",
-        "system": "Servi (Servi, Servi Mini, Servi+)",
+        "system": "Servi",
         "stage": 4,
         "channel": "Autonomous vehicle",
-        "note": "LG Electronics took a 51% controlling stake in Bear Robotics in January 2025 at a reported ~$600M valuation; Servi runs across thousands of restaurants, hotels, and senior-living sites in the U.S., Korea, and Japan.",
-        "source_url": "https://techcrunch.com/2025/01/24/lg-electronics-takes-majority-stake-in-bear-robotics-reportedly-valuing-startup-at-600m/",
-        "source_label": "TechCrunch, Jan 2025"
+        "task_coverage": "Food running, bussing support, and tray transport in restaurants and hospitality settings.",
+        "claim_supported": "Multi-site service-robot deployment is credible, but it covers transport tasks rather than the whole waiter role.",
+        "source_date": "2025-01-24",
+        "source_type": "reporting",
+        "confidence": "medium",
+        "note": "Servi is a useful case because it shows that a visible slice of table-service labor can be mechanized without solving the social and judgment-heavy parts of waiting tables.",
+        "sources": [
+          {
+            "label": "TechCrunch, Jan 2025",
+            "url": "https://techcrunch.com/2025/01/24/lg-electronics-takes-majority-stake-in-bear-robotics-reportedly-valuing-startup-at-600m/",
+            "date": "2025-01-24",
+            "source_type": "reporting",
+            "supports": "Reports LG's majority stake and Bear Robotics deployments across hospitality settings."
+          }
+        ]
       },
-      "humanoid": null
+      "humanoid": {
+        "status": "none_found",
+        "stage": null,
+        "channel": "No credible occupation-targeting deployment",
+        "task_coverage": "No credible humanoid task coverage identified",
+        "claim_supported": "Absence of a credible public humanoid deployment targeting this occupation as of April 2026.",
+        "source_date": "2026-04-30",
+        "source_type": "manual review",
+        "confidence": "medium",
+        "note": "No credible public humanoid deployment appears to target table-service work directly. The form factor is less relevant than smaller mobile service robots for the transport slice.",
+        "sources": []
+      }
     },
     {
       "soc_code": "37-2011",
-      "title": "Janitors and Cleaners",
+      "title": "Janitors and Cleaners, Except Maids and Housekeeping Cleaners",
       "national_employment": 2199900,
       "specialized": {
+        "status": "observed",
         "company": "Avidbots",
         "system": "Neo / Neo 2 floor scrubbers",
         "stage": 4,
         "channel": "Autonomous vehicle",
-        "note": "Neo robots are deployed across five continents at Singapore Changi, Paris CDG, and Cincinnati airports plus DHL warehouses and major shopping malls; Tennant + Brain Corp's competing X6 ROVR is rolling out fleetwide in 2026.",
-        "source_url": "https://www.therobotreport.com/neo-2-cleaning-robot-includes-avidbots-updates-ai-fleet-management/",
-        "source_label": "The Robot Report, 2024"
+        "task_coverage": "Autonomous floor scrubbing in airports, malls, warehouses, and large facilities.",
+        "claim_supported": "Multi-site autonomous cleaning is credible for floor care; restrooms, trash, detail cleaning, stairs, and clutter remain outside the covered slice.",
+        "source_date": "2024-02-05",
+        "source_type": "trade reporting",
+        "confidence": "high",
+        "note": "Janitorial automation is already real for predictable floor coverage. It is also a clean example of why task-level coverage matters: floor scrubbing can be advanced while the occupation remains far from fully automated.",
+        "sources": [
+          {
+            "label": "The Robot Report, Feb 2024",
+            "url": "https://www.therobotreport.com/neo-2-cleaning-robot-includes-avidbots-updates-ai-fleet-management/",
+            "date": "2024-02-05",
+            "source_type": "trade reporting",
+            "supports": "Describes Neo 2 updates and deployed cleaning use cases."
+          }
+        ]
       },
       "humanoid": {
+        "status": "observed",
         "company": "1X Technologies",
         "system": "NEO",
         "stage": 1,
-        "channel": "Teleoperation",
-        "note": "1X is shipping early NEO units into homes in late 2025 / early 2026 with substantial teleoperator support, positioned around tidying, surface wiping, and laundry. Physical Intelligence's π0 laundry-folding demo is the strongest pure-autonomy result.",
-        "source_url": "https://www.1x.tech/neo",
-        "source_label": "1X Technologies"
+        "channel": "Teleoperation / home early access",
+        "task_coverage": "Adjacent home tidying, surface wiping, and laundry claims; no commercial janitorial deployment.",
+        "claim_supported": "Product claims and early-access positioning are relevant to home chores, not facility janitorial substitution.",
+        "source_date": "2026-04-30",
+        "source_type": "company",
+        "confidence": "low",
+        "note": "NEO belongs here only as adjacent evidence about general manipulation in domestic spaces. It should be read as a frontier signal, not a janitorial labor-market deployment.",
+        "sources": [
+          {
+            "label": "1X Technologies, NEO product page",
+            "url": "https://www.1x.tech/neo",
+            "date": "2026-04-30",
+            "source_type": "company",
+            "supports": "Describes NEO home chores, Expert Mode, and remote-control features."
+          }
+        ]
       }
     },
     {
@@ -121,37 +271,94 @@
       "title": "Heavy and Tractor-Trailer Truck Drivers",
       "national_employment": 2070480,
       "specialized": {
+        "status": "observed",
         "company": "Aurora Innovation",
         "system": "Aurora Driver",
         "stage": 3,
         "channel": "Autonomous vehicle",
-        "note": "Commercial driverless Class 8 service launched on the Dallas–Houston lane in May 2025 with Uber Freight and Hirschbach as paying customers; expanded to Fort Worth–El Paso in 2025 and connecting to Phoenix in early 2026, with 250,000 driverless miles logged.",
-        "source_url": "https://techcrunch.com/2025/05/01/aurora-launches-commercial-self-driving-truck-service-in-texas/",
-        "source_label": "TechCrunch, May 2025"
+        "task_coverage": "Long-haul hub-to-hub Class 8 freight lanes, not local delivery, loading, inspection, or customer interaction.",
+        "claim_supported": "Commercial driverless freight and 2026 route expansion are supported; occupation-level driver substitution remains lane- and operating-domain-specific.",
+        "source_date": "2026-02-12",
+        "source_type": "reporting",
+        "confidence": "high",
+        "note": "Aurora is one of the strongest frontier cases because it has moved paid freight without a driver on public roads. The bounded operational domain matters: heavy-truck driving includes many routes and non-driving tasks outside the current lane network.",
+        "sources": [
+          {
+            "label": "TechCrunch, May 2025",
+            "url": "https://techcrunch.com/2025/05/01/aurora-launches-commercial-self-driving-truck-service-in-texas/",
+            "date": "2025-05-01",
+            "source_type": "reporting",
+            "supports": "Reports commercial driverless service launch between Dallas and Houston."
+          },
+          {
+            "label": "TechCrunch, Feb 2026",
+            "url": "https://techcrunch.com/2026/02/12/auroras-driverless-trucks-can-now-travel-farther-distances-faster-than-human-drivers/",
+            "date": "2026-02-12",
+            "source_type": "reporting",
+            "supports": "Reports expanded routes and 250,000 driverless miles as of January 2026."
+          }
+        ]
       },
-      "humanoid": null
+      "humanoid": {
+        "status": "none_found",
+        "stage": null,
+        "channel": "No credible occupation-targeting deployment",
+        "task_coverage": "No credible humanoid task coverage identified",
+        "claim_supported": "Absence of a credible public humanoid deployment targeting this occupation as of April 2026.",
+        "source_date": "2026-04-30",
+        "source_type": "manual review",
+        "confidence": "high",
+        "note": "A humanoid is not the relevant system for long-haul truck driving. The frontier is autonomous vehicle software and trucking operations, not human-form robots.",
+        "sources": []
+      }
     },
     {
       "soc_code": "49-9071",
       "title": "Maintenance and Repair Workers, General",
       "national_employment": 1531700,
       "specialized": {
+        "status": "observed",
         "company": "Boston Dynamics",
         "system": "Spot + Orbit fleet management",
         "stage": 4,
         "channel": "Autonomous vehicle",
-        "note": "Nearly 2,000 Spot robots deployed across customer sites (BMW, Cargill, power generation, construction), having inspected over 130,000 industrial assets; expanded from equipment-only inspection to full-facility coverage in 2025.",
-        "source_url": "https://bostondynamics.com/blog/retrospective-on-boston-dynamics-spot-robot-uses/",
-        "source_label": "Boston Dynamics, 2025"
+        "task_coverage": "Inspection rounds, asset monitoring, thermal sensing, and data capture in industrial facilities.",
+        "claim_supported": "Robotic inspection deployment is well supported; hands-on repair, diagnosis, and signoff remain outside scope.",
+        "source_date": "2025-01-01",
+        "source_type": "company",
+        "confidence": "high",
+        "note": "Spot is strong evidence for inspection augmentation, not for autonomous general maintenance. It changes what workers can monitor and how often, while repair remains human-centered.",
+        "sources": [
+          {
+            "label": "Boston Dynamics, 2025",
+            "url": "https://bostondynamics.com/blog/retrospective-on-boston-dynamics-spot-robot-uses/",
+            "date": "2025-01-01",
+            "source_type": "company",
+            "supports": "Describes Spot deployments and industrial inspection use cases."
+          }
+        ]
       },
       "humanoid": {
+        "status": "observed",
         "company": "Boston Dynamics",
-        "system": "Atlas (electric)",
+        "system": "Atlas electric",
         "stage": 1,
-        "channel": "None visible",
-        "note": "Electric Atlas demos through 2025–2026 cover whole-body manipulation, tool and parts handling at Hyundai facilities, and dynamic locomotion useful for ladder and stair access — the most credible humanoid progress on facility-style physical tasks. No general-maintenance customer yet.",
-        "source_url": "https://bostondynamics.com/blog/electric-new-era-for-atlas/",
-        "source_label": "Boston Dynamics"
+        "channel": "Lab / internal factory demo",
+        "task_coverage": "Adjacent whole-body manipulation and factory parts handling demos; no customer maintenance deployment.",
+        "claim_supported": "Atlas demonstrates relevant mobility and manipulation primitives, not occupation-targeting deployment.",
+        "source_date": "2024-04-17",
+        "source_type": "company",
+        "confidence": "medium",
+        "note": "Atlas is important as a capability marker for ladders, stairs, parts, and tools, but the public evidence is still demonstration-stage for this occupation.",
+        "sources": [
+          {
+            "label": "Boston Dynamics, Atlas electric",
+            "url": "https://bostondynamics.com/blog/electric-new-era-for-atlas/",
+            "date": "2024-04-17",
+            "source_type": "company",
+            "supports": "Introduces electric Atlas and its intended industrial learning path."
+          }
+        ]
       }
     },
     {
@@ -159,22 +366,55 @@
       "title": "Miscellaneous Assemblers and Fabricators",
       "national_employment": 1457800,
       "specialized": {
+        "status": "observed",
         "company": "Universal Robots (Teradyne)",
         "system": "UR cobot family",
         "stage": 4,
         "channel": "Cobot / co-located",
-        "note": "Over 75,000 UR cobots deployed worldwide with roughly 40% global cobot market share; the AI-ready UR15 launched at Automate 2025 cuts assembly cycle times by up to 30%.",
-        "source_url": "https://www.robotics247.com/article/automate-2025-universal-robots-introduces-ur15-cobot",
-        "source_label": "Robotics 24/7, 2025"
+        "task_coverage": "Machine tending, light assembly, pick-place, packaging, and repetitive industrial assistance.",
+        "claim_supported": "Broad cobot deployment supports augmentation across assembly tasks, but not full automation of miscellaneous assembly occupations.",
+        "source_date": "2025-05-13",
+        "source_type": "trade reporting",
+        "confidence": "high",
+        "note": "Cobots are the cleanest example of an augmentation pathway: they can shift repetitive handling while workers retain setup, quality judgment, fixture changes, and exception handling.",
+        "sources": [
+          {
+            "label": "Robotics 24/7, May 2025",
+            "url": "https://www.robotics247.com/article/automate-2025-universal-robots-introduces-ur15-cobot",
+            "date": "2025-05-13",
+            "source_type": "trade reporting",
+            "supports": "Reports UR15 launch and worldwide UR cobot deployment figures."
+          }
+        ]
       },
       "humanoid": {
+        "status": "observed",
         "company": "Figure",
         "system": "Figure 02 / Figure 03",
         "stage": 2,
         "channel": "Cobot / co-located",
-        "note": "Figure 02 completed an 11-month BMW Spartanburg pilot, loading 90,000+ sheet-metal parts into ~30,000 X3s before retiring in November 2025; Figure 03 began shipping in late 2025 with monthly volume roughly doubling toward ~240 units by April 2026.",
-        "source_url": "https://www.figure.ai/news/production-at-bmw",
-        "source_label": "Figure, 2025"
+        "task_coverage": "Automotive sheet-metal loading and adjacent factory material handling.",
+        "claim_supported": "BMW pilot evidence supports a bounded manufacturing task; 2026 production claims show fleet scaling, not deployment impact.",
+        "source_date": "2026-04-29",
+        "source_type": "company",
+        "confidence": "medium",
+        "note": "Figure is compelling because the BMW task is a real production-adjacent assembly workflow. The right claim is still narrow: sheet-metal loading, not the full assembler/fabricator occupation.",
+        "sources": [
+          {
+            "label": "Figure, Nov 2025",
+            "url": "https://www.figure.ai/news/production-at-bmw",
+            "date": "2025-11-19",
+            "source_type": "company",
+            "supports": "Reports 11-month BMW Spartanburg deployment, 90,000-plus parts loaded, and 30,000-plus X3 vehicles."
+          },
+          {
+            "label": "Figure, Apr 2026",
+            "url": "https://www.figure.ai/news/ramping-figure-03-production",
+            "date": "2026-04-29",
+            "source_type": "company",
+            "supports": "Reports Figure 03 production ramp and BotQ manufacturing progress."
+          }
+        ]
       }
     },
     {
@@ -182,22 +422,55 @@
       "title": "Cooks, Restaurant",
       "national_employment": 1452130,
       "specialized": {
+        "status": "observed",
         "company": "Sweetgreen / Wonder",
         "system": "Infinite Kitchen automated makeline",
         "stage": 3,
         "channel": "Fixed automation",
-        "note": "Roughly 20 Infinite Kitchen restaurants live by late 2025; Sweetgreen plans Infinite Kitchen in 75%+ of new builds in 2026 and sold the Spyce robotics arm to Wonder for ~$186M. Chef Robotics serves a parallel B2B prepared-meals niche (40M+ meals at Amy's Kitchen, Sunbasket, Cafe Spice).",
-        "source_url": "https://restauranttechnologynews.com/2025/11/sweetgreen-sells-restaurant-robotics-arm-to-wonder-while-continuing-infinite-kitchen-expansion/",
-        "source_label": "Restaurant Technology News, Nov 2025"
+        "task_coverage": "Automated salad/bowl makeline in a constrained menu and store format.",
+        "claim_supported": "Restaurant makeline deployments support a narrow food-assembly task, not restaurant cooking generally.",
+        "source_date": "2025-11-07",
+        "source_type": "trade reporting",
+        "confidence": "medium",
+        "note": "Infinite Kitchen shows that menu engineering can turn parts of restaurant cooking into an automation-friendly flow. That is not the same as a general cook robot across cuisines, layouts, and peak-time failures.",
+        "sources": [
+          {
+            "label": "Restaurant Technology News, Nov 2025",
+            "url": "https://restauranttechnologynews.com/2025/11/sweetgreen-sells-restaurant-robotics-arm-to-wonder-while-continuing-infinite-kitchen-expansion/",
+            "date": "2025-11-07",
+            "source_type": "trade reporting",
+            "supports": "Reports Infinite Kitchen footprint, expansion plans, and Wonder transaction."
+          }
+        ]
       },
       "humanoid": {
+        "status": "observed",
         "company": "Physical Intelligence",
-        "system": "π0 / π0.5",
+        "system": "pi0 / pi0.5",
         "stage": 1,
-        "channel": "None visible",
-        "note": "Published demos cover meal-prep manipulation: cracking eggs, handling produce, stovetop and cookware interaction, and kitchen cleanup, with π0.5 generalizing to unseen kitchens. Sunday Robotics targets the same space with fewer published technical results.",
-        "source_url": "https://www.physicalintelligence.company/blog/pi0",
-        "source_label": "Physical Intelligence, 2024"
+        "channel": "Lab research",
+        "task_coverage": "Adjacent meal-prep, table-bussing, grocery, and kitchen manipulation demos.",
+        "claim_supported": "Robot foundation-model demos show relevant manipulation capabilities, not restaurant cook deployment.",
+        "source_date": "2025-04-22",
+        "source_type": "research/company",
+        "confidence": "medium",
+        "note": "Physical Intelligence is valuable as capability evidence for deformable and kitchen objects. It remains a lab/research signal rather than a commercial cooking system.",
+        "sources": [
+          {
+            "label": "Physical Intelligence, Oct 2024",
+            "url": "https://www.physicalintelligence.company/blog/pi0",
+            "date": "2024-10-31",
+            "source_type": "research/company",
+            "supports": "Reports pi0 generalist policy and kitchen/food-adjacent manipulation tasks."
+          },
+          {
+            "label": "Physical Intelligence, Apr 2025",
+            "url": "https://www.physicalintelligence.company/blog/pi05",
+            "date": "2025-04-22",
+            "source_type": "research/company",
+            "supports": "Reports pi0.5 open-world generalization in home and kitchen-like environments."
+          }
+        ]
       }
     },
     {
@@ -205,22 +478,55 @@
       "title": "Nursing Assistants",
       "national_employment": 1388430,
       "specialized": {
+        "status": "observed",
         "company": "Diligent Robotics",
-        "system": "Moxi (Moxi 2.0 in 2026)",
+        "system": "Moxi",
         "stage": 3,
         "channel": "Autonomous vehicle",
-        "note": "Nearly 100 Moxi units operate across 25+ U.S. hospitals (including Medical City Dallas), completing 1.25M+ deliveries and 100,000+ autonomous elevator rides. Serve Robotics announced acquisition of Diligent in January 2026; Moxi handles logistics, not nursing tasks.",
-        "source_url": "https://www.therobotreport.com/diligent-robotics-hits-1m-picks-with-moxi-robot-in-healthcare-settings/",
-        "source_label": "The Robot Report, 2025"
+        "task_coverage": "Hospital logistics: supplies, samples, delivery runs, and elevator use. No patient handling or nursing care.",
+        "claim_supported": "Hospital logistics automation is supported; nursing-assistant task automation is deliberately not claimed.",
+        "source_date": "2026-01-20",
+        "source_type": "mixed",
+        "confidence": "high",
+        "note": "Moxi is useful because it shows a real healthcare augmentation pathway while also marking the boundary clearly: logistics can move to robots before patient-facing care does.",
+        "sources": [
+          {
+            "label": "The Robot Report, Feb 2025",
+            "url": "https://www.therobotreport.com/diligent-robotics-hits-1m-picks-with-moxi-robot-in-healthcare-settings/",
+            "date": "2025-02-18",
+            "source_type": "trade reporting",
+            "supports": "Reports Moxi hospital activity and one-million-pick milestone."
+          },
+          {
+            "label": "TechCrunch, Jan 2026",
+            "url": "https://techcrunch.com/2026/01/20/why-serve-robotics-is-acquiring-a-hospital-assistant-robot-company/",
+            "date": "2026-01-20",
+            "source_type": "reporting",
+            "supports": "Reports Serve Robotics acquisition of Diligent Robotics and healthcare logistics focus."
+          }
+        ]
       },
       "humanoid": {
+        "status": "observed",
         "company": "1X Technologies",
         "system": "NEO",
         "stage": 1,
-        "channel": "Teleoperation",
-        "note": "1X has positioned NEO toward eldercare and in-home assistance — fetching, light support, companionship — and is the most visible humanoid in homes as of early 2026, though heavily teleoperated. No humanoid has a credible patient-handling clinical pilot.",
-        "source_url": "https://www.1x.tech/neo",
-        "source_label": "1X Technologies"
+        "channel": "Teleoperation / home early access",
+        "task_coverage": "Adjacent eldercare and home-assistance positioning; no clinical patient-handling pilot.",
+        "claim_supported": "Product positioning is relevant to home assistance but does not support nursing-assistant deployment.",
+        "source_date": "2026-04-30",
+        "source_type": "company",
+        "confidence": "low",
+        "note": "NEO should be treated as adjacent home-care evidence. It is not evidence that humanoids can safely perform patient transfers, bathing, toileting, or clinical observation in care settings.",
+        "sources": [
+          {
+            "label": "1X Technologies, NEO product page",
+            "url": "https://www.1x.tech/neo",
+            "date": "2026-04-30",
+            "source_type": "company",
+            "supports": "Describes NEO home assistance, Expert Mode, and remote operation."
+          }
+        ]
       }
     }
   ]
