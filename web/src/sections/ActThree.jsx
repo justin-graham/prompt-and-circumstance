@@ -53,7 +53,7 @@ function ActThree() {
 
         <FigureShell
           eyebrow="Prototype occupation frame"
-          title="Tile area is employment. Color is the exposure pathway. The detail panel shows the task threshold that keeps each score from becoming an occupation-level substitution claim."
+          title="Tile area is employment. Color is the exposure pathway."
           fullBleed
         >
           <DeferredChart loader={loadOccupationExplorer} minHeight={920} />
