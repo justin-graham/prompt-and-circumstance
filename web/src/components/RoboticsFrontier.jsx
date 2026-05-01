@@ -279,7 +279,7 @@ function RoboticsFrontier() {
       <div className="mb-14">
         <div className="mb-5 font-sans">
           <p className="text-[0.72rem] font-semibold uppercase tracking-[0.12em] text-accent">
-            Deployment comparison
+            Robotics deployment comparison
           </p>
           <p className="mt-2 max-w-[720px] text-sm leading-6 text-muted">
             The important column is the task slice. Many systems are real and

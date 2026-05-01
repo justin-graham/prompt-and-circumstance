@@ -4,15 +4,16 @@ function Closing() {
   return (
     <Section className="border-t border-rule py-24">
       <p className="text-2xl leading-10 text-ink">
-        The implication is not that conversation data are flawed. It is that a
-        usage-based labor index can become more complete by adding a physical
-        exposure layer for workers whose tasks rarely begin in a chat box.
+        A Claude usage-based labor index can become more complete by adding a
+        physical exposure layer for workers whose tasks rarely begin in a chat
+        box.
       </p>
       <p className="mt-6 text-lg leading-8 text-muted">
         For anyone outside the labs and statistical agencies, the stake is
         simpler: if AI&apos;s effect on work is measured only through what
         passes through a chat window, then roughly half the labor force is
-        invisible to the policy conversation that follows.
+        invisible to the policy conversation that follows. Prompt and
+        circumstance.
       </p>
       <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3 font-sans text-sm font-medium">
         <a
@@ -31,7 +32,7 @@ function Closing() {
           className="text-accent underline decoration-rule underline-offset-4"
           href="https://www.raindroprace.com/contact"
         >
-          Send feedback
+          Contact
         </a>
       </div>
     </Section>

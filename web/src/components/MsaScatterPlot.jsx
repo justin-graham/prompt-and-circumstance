@@ -168,7 +168,7 @@ function MsaScatterPlot() {
             x={margin.left + innerWidth / 2}
             y={height - 8}
           >
-            MSA coverage gap
+            Coverage gap
           </text>
           <text
             fill={colors.muted}

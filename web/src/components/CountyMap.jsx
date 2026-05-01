@@ -191,9 +191,9 @@ function CountyMap() {
               County coverage gap
             </p>
             <p className="mt-2 max-w-[720px] text-sm leading-6 text-muted">
-              County estimates inherit reported MSA occupation gaps where
-              available, then use QCEW industry structure to localize variation
-              within metros and outside metro counties.
+              County estimates inherit reported occupation gaps where available,
+              then use QCEW industry structure to localize variation within
+              metros and outside metro counties.
             </p>
           </div>
           <div ref={containerRef}>

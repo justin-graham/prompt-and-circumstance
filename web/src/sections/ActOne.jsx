@@ -26,22 +26,21 @@ const tierColors = {
 
 function ActOne() {
   return (
-    <Section kicker="Scale of the gap" title="The coverage gap is large enough to shape the measurement frame." className="py-24">
+    <Section kicker="Mind the gap" title="The coverage gap." className="py-24">
       <p>
         Anthropic&apos;s Economic Index measures where Claude is being used at
-        work. That makes it unusually concrete: the data are not forecasts or
-        self-reports, but traces of actual interactions with AI systems.
+        work. That makes it unusually concrete: the data are actual
+        interactions with AI systems.
       </p>
       <p>
-        The limitation is structural. Occupations that do not naturally route
+        But the limitations are structural. Occupations that do not naturally route
         work through a text interface are less likely to appear, even when AI
-        could eventually affect their tasks through robotics, inspection,
-        scheduling, teleoperation, or exception handling.
+        could eventually affect their tasks through embodied AI.
       </p>
       <p>
-        We use <em>coverage gap</em> throughout this site to mean the share of
-        U.S. employment in occupations that register only weakly, or not at
-        all, in observed Economic Index usage.
+        This page measures the <em>coverage gap</em>: the share of U.S.
+        employment in occupations that register weakly, or not at all, in
+        Economic Index usage.
       </p>
       <FigureShell
         eyebrow="Occupation coverage"

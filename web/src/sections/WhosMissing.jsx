@@ -11,8 +11,8 @@ function WhosMissing() {
     <section className="border-y border-rule bg-rule/20 py-24 md:py-32">
       <Section kicker="Who's missing" title="The gap becomes clearer when the occupations have names.">
         <p>
-          The ten largest low-coverage occupations are not marginal categories.
-          Together, they account for about {formatMillions(topTenEmployment)}{' '}
+          The ten largest low-coverage occupations account for about{' '}
+          {formatMillions(topTenEmployment)}{' '}
           workers: food service, freight movement, cleaning, driving,
           maintenance, assembly, cooking, and care work.
         </p>

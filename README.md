@@ -1,16 +1,15 @@
-# The Invisible Workforce
+# Prompt and Circumstance
 
-The Invisible Workforce is an independent public research artifact prepared for an Anthropic Fellows Program application. It extends the Anthropic Economic Index measurement frame by estimating how much U.S. employment sits in occupations with little observed representation in Claude.ai usage data, then asks where that gap is geographically concentrated.
+Thanks for reading! Prompt and Circumstance extends the Anthropic Economic Index measurement frame by estimating how much U.S. employment sits in occupations with little observed representation in Claude usage data.
 
 The site is respectful of the Economic Index design: usage data are valuable precisely because they are observed behavior. The contribution here is to quantify one structural limitation and propose a physical-exposure extension for workers whose tasks rarely begin in a chat interface.
 
 ## Headline Findings
 
-- May 2024 OEWS national employment: 154,187,380 workers.
-- Low-coverage employment at the default EI threshold: 68,107,489 workers.
+- May 2024 national employment: 154,187,380 workers.
+- Low-coverage employment at the default Economic Index threshold: 68,107,489 workers.
 - Coverage gap: 44.17% of national employment.
-- MSA coverage-gap / physical-exposure correlation: 0.772.
-- Reported-detail-only sensitivity correlation, excluding allocated MSA rows: 0.795.
+- Coverage-gap / physical-exposure correlation: 0.772.
 
 ## Methodology Summary
 
@@ -53,28 +52,6 @@ The pipeline prints the national coverage summary, MSA correlation, top invisibl
 - `data/processed/summary_national.json`
 - `data/processed/summary_geography.json`
 
-## Frontend
-
-The website is a static Vite + React app.
-
-```bash
-cd web
-npm install
-npm run dev
-npm run build
-npm run lint
-```
-
-The county map uses `us-atlas` TopoJSON loaded asynchronously after first paint. The app has no backend, user accounts, analytics requirement, social share widgets, or newsletter signup.
-
-## Deployment
-
-The repository is configured for GitHub Pages using the workflow in `.github/workflows/pages.yml`. Pushes to `main` build the Vite app in `web/` and publish `web/dist/` to:
-
-```text
-https://justin-graham.github.io/prompt-and-circumstance/
-```
-
 ## Status
 
-This repository is not an Anthropic product and does not imply Anthropic endorsement. It is an independent research artifact submitted as part of an Anthropic Fellows application.
+This repository is not an Anthropic product. It is an independent research artifact, just for fun :)

@@ -437,13 +437,8 @@ function OccupationExplorer() {
     <AnimatedChart>
       <div ref={ref} className="mx-auto my-8 max-w-[1180px]">
         <PathwayLegend />
-        <div className="grid gap-4 md:grid-cols-[1fr_auto] md:items-end">
-          <p className="font-sans text-sm leading-6 text-muted">
-            Tile area is national employment. Color groups occupations by the
-            dominant exposure pathway. Select any tile to see which threshold is
-            doing the most work in the score.
-          </p>
-          <div className="flex gap-5 font-sans text-xs text-muted">
+        <div className="flex flex-wrap gap-5 font-sans text-xs text-muted">
+          <div className="flex gap-5">
             <span className="inline-flex items-center gap-2">
               <span className="h-[7px] w-[7px] border border-accent bg-accent" />
               Full automation
